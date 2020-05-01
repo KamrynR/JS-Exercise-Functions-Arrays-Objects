@@ -35,8 +35,8 @@ function addNumbers(num1, num2) {
  * the returned value should look like: 'Goodbye, Andy. Have a great day.'
  * 
 */
-function sayGoodbye(/* code here */) {
-  /* code here */
+function sayGoodbye(name) {
+  return `Goodbye, ${name}. Have a great day.`
 }
 
 /**
@@ -53,10 +53,11 @@ function sayGoodbye(/* code here */) {
  * Hint 1: The formula for converting celsius to fahrenheit is t*9/5 + 32 where t is the temperature in celsius.
  * Hint 2: There is a very easy way to round numbers in JS. Do a google search to find out how. 
 */
-function temperatureCtoF(/* code here */) {
-  /* code here */
+function temperatureCtoF(C) {
+  let F = C *(9/5) + 32;
+  return Math.round(F);
 }
-
+//console.log(temperatureCtoF(0));
 /**
  * ### Challenge `temperatureInF`
  * 
@@ -74,11 +75,34 @@ function temperatureCtoF(/* code here */) {
  * 
  * Hint: You can call your `temperatureCtoF` function from inside `temperatureInF`.
 */
-function temperatureInF(/* code here */) {
-  /* code here */
+function temperatureInF(num, type) {
+  if (type === "C") {
+    num = temperatureCtoF(num);
+  }
+    else if (type === "F") {
+      num = num;
+  }
+  return `${num}F`;
 }
+console.log(temperatureInF(101, "C"));
 
+// function temperatureInF(num) {
 
+//   function getNumbersFromString() {
+//     let tName = `${num}`;
+//     return `${(tName.match(/\d+/))}`;
+//   }
+//   let temp = getNumbersFromString();
+
+//   let lastChar = num.substr(num.length -1);
+//   if (lastChar = "F"){
+//     temp = temp;
+//   } else if (lastChar = "C") {
+//     temp = Math.round(temp = (temp *(9/5) + 32));
+//   }
+//   return `${temp}F`;
+// }
+// console.log(temperatureInF("50C"));
 /**
  * ### Challenge `makePersonObject`
  * 
@@ -95,10 +119,15 @@ function temperatureInF(/* code here */) {
  *   email: "leia@leia.com",
  * }
 */
-function makePersonObject(/* code here */) {
-  /* code here */
+function makePersonObject(id ,name ,email) {
+  let person = {
+    id: `${id}`,
+    name: `${name}`,
+    email: `${email}`
+  };
+  return person;
 }
-
+//console.log(makePersonObject(5, 'Leia', 'leia@leia.com'));
 /**
  * ### Challenge `getName`
  * 
@@ -112,10 +141,15 @@ function makePersonObject(/* code here */) {
  * passing { id: 1, name: 'Leia', email: 'leia@leia.com` } as the argument,
  * the returned value should look like `Hello, my name is Leia`.
 */
-function getName(/* code here */) {
-  /* code here */
+function getName(id, name, email) {
+  let object = {
+    id: id,
+    name: name,
+    email: email
+  }
+  return `Hello, my name is ${object.name}`
 }
-
+console.log(getName(1, "Leia", "leia@leia.com"));
 
 /**
  * ### Challenge `appleIndex`
@@ -132,10 +166,9 @@ function getName(/* code here */) {
  * passing in [ 'orange', 'grape', 'apple', 'banana', 'mango' ] as the argument,
  * the returned value should be: 2.
 */
-function appleIndex(/* code here */) {
-  /* code here */
+function appleIndex(array) {
+  return console.log(array.indexOf('apple'));
 }
-
 /**
  * ### Challenge `isItAnApple`
  * 
@@ -151,11 +184,19 @@ function appleIndex(/* code here */) {
  * passing in [ 'orange', 'apple', 'banana', 'apples', 'apple', 'mango' ] as the argument,
  * the returned value should be: [ false, true, false, false, true, false ].
 */
-function isItAnApple(/* code here */) {
-  /* code here */
+function isItAnApple(array) {
+  //let array2 = array.filter
+  if ( array === "apple" ) {
+    console.log("true");
+  }
+  else if (array != "apple") {
+    console.log("false");
+
+  }
+  return array;
 }
-
-
+  
+console.log(isItAnApple([ 'orange', 'apple', 'banana', 'apples', 'apple', 'mango' ]));
 
 /*
 // ⭐️ Example Test Data ⭐️
